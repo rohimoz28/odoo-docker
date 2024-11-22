@@ -1,1 +1,2 @@
 /conf/odoo-hrms/pg-data/*
+*.pyc
