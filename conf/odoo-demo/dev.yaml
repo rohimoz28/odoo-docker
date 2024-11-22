@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  odoo-demo:
+    restart: unless-stopped
+    ports:
+      - "8069:8069"
+
+  postgres-demo:
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  # nginx-demo:
+  #   restart: no
+  #   ports:
+  #     - "81:80"
