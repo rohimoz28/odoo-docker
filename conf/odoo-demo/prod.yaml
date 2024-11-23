@@ -1,16 +1,16 @@
 version: "3.8"
 services:
-  odoo-hrms:
+  odoo-demo:
     restart: unless-stopped
     ports:
       - "8069:8069"
 
-  postgres-hrms:
+  postgres-demo:
     ports:
       - "5434:5432"
     restart: unless-stopped
 
-  # nginx-default:
+  # nginx-demo:
   #   restart: always
   #   ports:
   #     - "81:80"
