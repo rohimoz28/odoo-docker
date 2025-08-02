@@ -1,2 +1,5 @@
 /conf/odoo-hrms/pg-data/*
 *.pyc
+.env
+*.Identifier
+.idea

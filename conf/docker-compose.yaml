@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  odoo-demo:
+    image: custom-odoo:17.0
+    container_name: odoo-demo
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      - "8074:8069"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - postgres-demo
+    volumes:
+      - odoo-data-demo:/var/lib/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ../../customize/odoo-demo/addons-customize:/mnt/addons-customize
+    networks:
+      - demo_odoo_network
+
+  postgres-demo:
+    image: postgres:15
+    container_name: postgres-demo
+    env_file: .env
+    ports:
+      - "5434:5432"
+    restart: unless-stopped
+    volumes:
+      - odoo-db-demo:/var/lib/pgsql/data/pgdata
+    networks:
+      - demo_odoo_network
+
+volumes:
+  odoo-data-demo:
+    name: odoo-data-demo
+  odoo-db-demo:
+    name: odoo-db-demo
+
+networks:
+  demo_odoo_network:
+    name: demo_odoo_network
+    driver: bridge
