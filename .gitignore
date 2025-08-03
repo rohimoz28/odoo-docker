@@ -3,4 +3,4 @@
 .env
 *.Identifier
 .idea
-/customize/addons-customize
+/customize/addons-customize/*
