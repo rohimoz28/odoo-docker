@@ -14,7 +14,7 @@ services:
     volumes:
       - odoo-data-demo:/var/lib/odoo
       - ./odoo.conf:/etc/odoo/odoo.conf
-      - ../../customize/odoo-demo/addons-customize:/mnt/addons-customize
+      - ../customize/addons-customize:/mnt/addons-customize
     networks:
       - demo_odoo_network
 
