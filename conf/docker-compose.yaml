@@ -19,7 +19,7 @@ services:
       - odoo_network
 
   postgres:
-    image: postgres:15
+    image: postgres:16-alpine
     container_name: postgres-demo
     env_file: .env
     ports:
